@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../assets/img/pizza-logo.svg';
 import Button from './Button';
 import { Link } from 'react-router-dom';
-import { Cart } from '../pages';
 
 export class Header extends Component {
   render() {

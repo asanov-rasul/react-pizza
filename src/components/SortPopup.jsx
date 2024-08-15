@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react'
 
 function SortPopup({items}) {

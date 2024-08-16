@@ -2,29 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Routers} from 'react-router-dom';
-import { createStore } from 'redux';
+import store from './redux/store';
 
-function counterReducer(state = { value: 0 }, action) {
-  switch (action.type) {
-    case 'counter/incremented':
-      return { value: state.value + 1 }
-    case 'counter/decremented':
-      return { value: state.value - 1 }
-    default:
-      return state
-  }
-}
 
-let store = createStore(counterReducer)
-
-console.log(store)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
+  <Provider store={store}>
     <Routers>
       <App />
     </Routers>
+  </Provider>
   // </React.StrictMode>
 );

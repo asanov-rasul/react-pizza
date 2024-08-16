@@ -26,7 +26,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
         <div className="pizza-block__selector">
         <ul>
             {availableTypes.map((type, index) => (
-            <li onClick={() => onSelectType(index)}
+            <li key={`type_${index}`} onClick={() => onSelectType(index)}
                     className={classNames({
                     active : activeType === index,
                     disabled: !types.includes(index)
@@ -37,7 +37,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
         </ul>
         <ul>
         {availableSizes.map((size, index) => (
-                <li onClick={() => onSelectSize(index)}
+                <li key={`type_${index}`} onClick={() => onSelectSize(index)}
                 className={classNames({
                 active : activeSize === index,
                 disabled: !sizes.includes(size)
